@@ -1,0 +1,31 @@
+Problem:
+
+Write a function last that accepts a list and returns the last element in the list.
+If the list is empty: return null
+
+Solution 1: 
+
+const last = xs => {
+  if(xs.length >= 1) return xs.pop();
+  else return null;
+}
+
+Solution 2: 
+
+const last = xs => xs.length ? xs[xs.length - 1] : null;
+
+Solution 3:
+
+const last = xs => xs.length == 0 ? null : xs[xs.length-1];
+
+
+
+Test:
+describe("last", function(){
+  it("should work with non-empty lists", function(){
+    Test.assertEquals( last([1,2,3]), 3, "last([1,2,3]) == 3");
+  });
+  it("should work with empty lists", function(){
+    Test.assertEquals( last([]), null, "last( [] ) == null");
+  });
+});
